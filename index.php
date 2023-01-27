@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="css/uikit-rtl.min.css">
 </head>
 <body>
-<?php require_once 'vue/barreDeNav.php' ?>
+<?php require_once 'vue/vueRestaurants.php' ?>
 <script src="js/uikit.min.js"></script>
 <script src="js/uikit-icons.min.js"></script>
 </body>
