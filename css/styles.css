@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 48px;
+}
+
+h1 a {
+    color: whitesmoke;
+}
+
+a:hover {
+    color: rgba(84, 58, 183, 1);
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+    color: white;
+}
+
+.logo {
+    width: 50px;
+    fill: white;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner-header {
+    height: 35vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px; /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: whitesmoke;
+    }
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    cursor: pointer;
+    height: 100px;
+    margin: 20px;
+    padding: 0 20px;
+    position: relative;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.025);
+    text-align: center;
+    transition: height 1000ms;
+    width: 260px;
+}
+
+@media (max-width: 767px) {
+    .card {
+        left: calc(50% - 20px);
+        transform: translateX(-50%);
+    }
+}
+
+.card:hover {
+    height: 200px;
+}
+
+.label {
+    margin-top: 30px;
+    transform: translateY(10px);
+    transition: transform 1000ms;
+}
+
+.card:hover .label {
+    transform: translateY(0);
+}
+
+.text1 {
+    color: #411ef0;
+    font-size: x-large;
+    font-weight: bold;
+    clip-path: polygon(0% 100%, 0 -90%, 50% -5%, 100% -90%, 100% 100%);
+    transition: clip-path 1000ms;
+}
+
+.card:hover .text1 {
+    clip-path: polygon(0% 100%, 0 -100%, 50% -15%, 100% -100%, 100% 100%);
+}
+
+.text2 {
+    clip-path: polygon(0% 100%, 0% -80%, 15% -70%, 17.23% -53.59%, 23% -40%, 27.23% -28.94%, 35% -20%, 41.09% -13.59%, 50% -10%, 58.91% -13.23%, 65% -20%, 72.77% -28.23%, 77% -40%, 82.77% -54.65%, 85% -70%, 100% -80%, 100% 100%);
+    transition: clip-path 1000ms;
+}
+
+.card:hover .text2 {
+    clip-path: polygon(0% 100%, 0% -90%, 15% -80%, 17.23% -63.59%, 23% -50%, 27.23% -38.94%, 35% -30%, 41.09% -23.59%, 50% -20%, 58.91% -23.23%, 65% -30%, 72.77% -38.23%, 77% -50%, 82.77% -64.65%, 85% -80%, 100% -90%, 100% 100%);
+}
+
+.text-content {
+    transform: translateY(-160px);
+    transition: transform 1000ms;
+}
+
+.card:hover .text-content {
+    margin: 10px;
+    transform: translateY(-15px);
+    color: #411ef0;
+}
+
+.chevron {
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 15px);
+    transform-origin: 50%;
+    transform: rotate(180deg);
+    transition: transform 1000ms;
+}
+
+.card:hover .chevron {
+    transform: rotate(0deg);
+}
